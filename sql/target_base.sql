@@ -1,7 +1,7 @@
 -- target_base for merchant 501, October 2026, Diwali campaigns.
 -- Run: sqlite3 data/comm_log.db < sql/target_base.sql      (expects 22)
 --
--- Rules, all from the data dictionary:
+-- Rules:
 --   1. A send counts only if its campaign cleared approval (finalized creation_status)
 --      AND finished processing.
 --   2. A retry chain (a campaign plus every retry under it, any depth) is one
