@@ -1,8 +1,6 @@
 -- Checks I ran before trusting any count.
 -- Run: sqlite3 -header -column data/comm_log.db < sql/data_checks.sql
 
--- 1. Integrity: every row has a campaign, merchants agree, nothing outside October,
---    no exact duplicate sends, timestamps behave.
 SELECT 'log rows'                              AS check_name, COUNT(*) AS value FROM communication_log
 UNION ALL SELECT 'campaigns',                  COUNT(*) FROM campaign
 UNION ALL SELECT 'rows with no campaign',      COUNT(*) FROM communication_log l
