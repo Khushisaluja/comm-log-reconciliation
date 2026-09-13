@@ -3,7 +3,7 @@
 -- Run: sqlite3 -header -column data/comm_log.db < sql/bridge.sql
 
 WITH RECURSIVE
-scoped AS (          -- merchant 501, campaign type, October, Diwali; nothing else
+scoped AS (        
     SELECT l.*, c.parent_id, c.creation_status, c.processing_status
     FROM communication_log l
     JOIN campaign c ON c.id = l.communication_id AND c.merchant_id = l.merchant_id
